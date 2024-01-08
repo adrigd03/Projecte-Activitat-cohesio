@@ -43,7 +43,7 @@ function iniciarSession($correu,$nom){
     session_start();
     $_SESSION["correu"]=$correu;
     $_SESSION["nom"]=$nom;
-    header("Location: ../Vista/index.vista.php");
+    header("Location: ../Controlador/clases.php");
     exit();
 
 }

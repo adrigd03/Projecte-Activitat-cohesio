@@ -33,5 +33,5 @@ function parseJwt (token) {
 
 //redirige al oauth para tratar las dadas desde el php.
 function auth(profile){
-    window.location.href="../Controlador/oauth.php?correu="+profile.email+"&"+"nom="+profile.given_name;
+    window.location.href="../Controlador/oauth.php?correu="+profile.email+"&"+"nom="+profile.name;
 }
