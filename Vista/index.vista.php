@@ -52,6 +52,10 @@
                 </div>
             </div>
         </div>
+<body>        
+    <div id="g_id_onload"
+        data-client_id="281315218974-v6a5f0cgdkd40afl85jkvmcpvermp2er.apps.googleusercontent.com"
+        data-callback="onSignIn">      
     </div>
 
 
