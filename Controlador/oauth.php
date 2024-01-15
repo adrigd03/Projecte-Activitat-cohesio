@@ -40,7 +40,7 @@ function iniciarSession($correu){
         //Profesor
         $role="Profe";
     }
-    if($correu=="e.rubio@sapalomera.cat"){
+    elseif($correu=="e.rubio@sapalomera.cat"){
         $role="Admin";
     }
     else{
@@ -51,7 +51,7 @@ function iniciarSession($correu){
     $_SESSION["correu"]=$correu;
     $_SESSION["role"]=$role;
 
-    header("Location: ../Controlador/clases.php");
+    header("Location: ../Controlador/inici.php");
     exit();
 
 }

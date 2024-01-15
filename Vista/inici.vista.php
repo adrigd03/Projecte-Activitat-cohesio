@@ -10,15 +10,7 @@
 </head>
 <body>
  
-<div class="navbar">
-  
-    <h2 class="align-center">Administrador</h2>
-    <a href="">Tancar Sessió</a>
-    <a href="">Horari Profesors</a>
-    <a href="">Horari Alumnat</a>
-    
-  
-</div>
+<?php require_once("../Vista/navbar.php"); ?>
   <!--Opcions -->
 <div class="contenidor">
 		<h1>Inici</h1>
