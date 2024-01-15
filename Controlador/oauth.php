@@ -5,7 +5,7 @@
 
 if ($_SERVER["REQUEST_METHOD"]=="GET"&& isset($_GET["correu"])){
     $correu=$_GET["correu"];
-    $nom=$_GET["nom"];
+
 
 }else{
     echo("Error amb les credencials");
@@ -13,24 +13,18 @@ if ($_SERVER["REQUEST_METHOD"]=="GET"&& isset($_GET["correu"])){
     exit();
 }
 
-try{$nom=existeixUsuari($correu);
-    try{
-        iniciarSession($correu,$nom);
-    }
-    catch(Exception $e){
-        echo("Error amb les credencials");
-        header("Location: ../Controlador/index.php");
-        exit();
-    }
-}catch(Exception $e){
+
+try{
+    iniciarSession($correu);
+}
+catch(Exception $e){
     echo("Error amb les credencials");
     header("Location: ../Controlador/index.php");
     exit();
 }
 
-function existeixUsuari(){
 
-}
+
 
 /**
  * Summary of iniciarSession
@@ -39,10 +33,24 @@ function existeixUsuari(){
  * @param String $nom el nom del usuari
  * @return void
  */
-function iniciarSession($correu,$nom){
+function iniciarSession($correu){
+//Poner una exclamacion para que sea solo profes.
+    $array= explode("@",$correu);
+    if($array[1]=="sapalomera.cat"&&str_contains($array[0],".")){
+        //Profesor
+        $role="Profe";
+    }
+    if($correu=="e.rubio@sapalomera.cat"){
+        $role="Admin";
+    }
+    else{
+        throw new Error("Error amb les credencials.");
+    }
+
     session_start();
     $_SESSION["correu"]=$correu;
-    $_SESSION["nom"]=$nom;
+    $_SESSION["role"]=$role;
+
     header("Location: ../Controlador/clases.php");
     exit();
 
