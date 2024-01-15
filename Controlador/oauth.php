@@ -51,7 +51,7 @@ function iniciarSession($correu){
     $_SESSION["correu"]=$correu;
     $_SESSION["role"]=$role;
 
-    header("Location: ../Controlador/clases.php");
+    header("Location: ../Controlador/inici.php");
     exit();
 
 }
