@@ -40,7 +40,7 @@ function iniciarSession($correu){
         //Profesor
         $role="Profe";
     }
-    if($correu=="e.rubio@sapalomera.cat"){
+    elseif($correu=="e.rubio@sapalomera.cat"){
         $role="Admin";
     }
     else{
