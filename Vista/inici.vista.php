@@ -17,7 +17,7 @@
 
     <button><a href="">Crear/Moure Grups</a></button> 
     <button><a href="">Crear/Modificar Proves</a></button> 
-    <button><a href="">LListat Alumnat</a></button>
+    <button><a href="">Llistat Alumnat</a></button>
 
   
 </div>
