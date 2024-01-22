@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-01-2024 a las 16:53:56
+-- Tiempo de generación: 22-01-2024 a las 15:45:25
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -32,9 +32,23 @@ USE `activitatcohesio`;
 DROP TABLE IF EXISTS `alumnes`;
 CREATE TABLE IF NOT EXISTS `alumnes` (
   `id` int(30) NOT NULL,
+  `id_grup` int(100) NOT NULL,
   `nom` varchar(45) NOT NULL,
   `clase` varchar(80) NOT NULL,
   `grup` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grups`
+--
+
+DROP TABLE IF EXISTS `grups`;
+CREATE TABLE IF NOT EXISTS `grups` (
+  `id` int(100) NOT NULL,
+  `nom` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
