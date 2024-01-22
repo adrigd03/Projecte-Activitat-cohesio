@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-01-2024 a las 15:45:25
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 22-01-2024 a las 16:07:48
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,12 +31,21 @@ USE `activitatcohesio`;
 
 DROP TABLE IF EXISTS `alumnes`;
 CREATE TABLE IF NOT EXISTS `alumnes` (
-  `id` int(30) NOT NULL,
-  `id_grup` int(100) NOT NULL,
+  `id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_grup` int(100) DEFAULT NULL,
   `nom` varchar(45) NOT NULL,
   `clase` varchar(80) NOT NULL,
-  `grup` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `grup` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alumnes`
+--
+
+INSERT INTO `alumnes` (`id`, `id_grup`, `nom`, `clase`, `grup`) VALUES
+(1, 2, 'Eric', 'DAW 2', 'DAW 1'),
+(2, 0, 'Adrián', 'DAW', '');
 
 -- --------------------------------------------------------
 
@@ -46,10 +55,18 @@ CREATE TABLE IF NOT EXISTS `alumnes` (
 
 DROP TABLE IF EXISTS `grups`;
 CREATE TABLE IF NOT EXISTS `grups` (
-  `id` int(100) NOT NULL,
+  `id` int(100) NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `grups`
+--
+
+INSERT INTO `grups` (`id`, `nom`) VALUES
+(1, 'SMX 1'),
+(2, 'DAW 1');
 
 -- --------------------------------------------------------
 
@@ -59,13 +76,13 @@ CREATE TABLE IF NOT EXISTS `grups` (
 
 DROP TABLE IF EXISTS `proves`;
 CREATE TABLE IF NOT EXISTS `proves` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(30) NOT NULL,
   `descripcio` text NOT NULL,
   `professsor` varchar(80) NOT NULL,
   `material` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
