@@ -24,13 +24,18 @@
             <div class="tab-pane fade show active" id="alumnos" role="tabpanel" aria-labelledby="alumnos-tab">
                 <h3>Alumnos del grup</h3>
                 <!-- Aquí puedes mostrar la lista de alumnos del grupo -->
-                
+                <ul class="list-group">
+                    <?php print_r( $alumnes );?>
+                </ul>
             </div>
             
             <!-- Pestaña de Disponibles -->
             <div class="tab-pane fade" id="disponibles" role="tabpanel" aria-labelledby="disponibles-tab">
                 <h3>Alumnes disponibles</h3>
                 <!-- Aquí puedes mostrar la lista de alumnos disponibles para añadir -->
+                <ul class="list-group">
+                    <?php print_r( $disponibles );?>
+                </ul>
                 <button class="btn btn-primary">Afegir</button>
             </div>
         </div>
