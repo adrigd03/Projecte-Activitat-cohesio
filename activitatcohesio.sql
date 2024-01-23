@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-01-2024 a las 16:07:48
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 23-01-2024 a las 14:01:55
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `activitatcohesio`
 --
-CREATE DATABASE IF NOT EXISTS `activitatcohesio` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `activitatcohesio`;
 
 -- --------------------------------------------------------
 
@@ -29,23 +27,22 @@ USE `activitatcohesio`;
 -- Estructura de tabla para la tabla `alumnes`
 --
 
-DROP TABLE IF EXISTS `alumnes`;
-CREATE TABLE IF NOT EXISTS `alumnes` (
-  `id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `alumnes` (
+  `id` int(30) UNSIGNED NOT NULL,
   `id_grup` int(100) DEFAULT NULL,
   `nom` varchar(45) NOT NULL,
   `clase` varchar(80) NOT NULL,
   `grup` varchar(80) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  `asistencia` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `alumnes`
 --
 
-INSERT INTO `alumnes` (`id`, `id_grup`, `nom`, `clase`, `grup`) VALUES
-(1, 2, 'Eric', 'DAW 2', 'DAW 1'),
-(2, 0, 'Adrián', 'DAW', '');
+INSERT INTO `alumnes` (`id`, `id_grup`, `nom`, `clase`, `grup`, `asistencia`) VALUES
+(1, 2, 'Eric', 'DAW 2', 'DAW 1', 1),
+(2, 0, 'Adrián', 'DAW', '', 0);
 
 -- --------------------------------------------------------
 
@@ -53,12 +50,10 @@ INSERT INTO `alumnes` (`id`, `id_grup`, `nom`, `clase`, `grup`) VALUES
 -- Estructura de tabla para la tabla `grups`
 --
 
-DROP TABLE IF EXISTS `grups`;
-CREATE TABLE IF NOT EXISTS `grups` (
-  `id` int(100) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `grups` (
+  `id` int(100) NOT NULL,
+  `nom` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `grups`
@@ -74,15 +69,57 @@ INSERT INTO `grups` (`id`, `nom`) VALUES
 -- Estructura de tabla para la tabla `proves`
 --
 
-DROP TABLE IF EXISTS `proves`;
-CREATE TABLE IF NOT EXISTS `proves` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `proves` (
+  `id` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `descripcio` text NOT NULL,
   `professsor` varchar(80) NOT NULL,
-  `material` varchar(80) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `material` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `alumnes`
+--
+ALTER TABLE `alumnes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `grups`
+--
+ALTER TABLE `grups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `proves`
+--
+ALTER TABLE `proves`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `alumnes`
+--
+ALTER TABLE `alumnes`
+  MODIFY `id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `grups`
+--
+ALTER TABLE `grups`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `proves`
+--
+ALTER TABLE `proves`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
