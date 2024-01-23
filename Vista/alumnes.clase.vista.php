@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estils/estils.css">
+    <script defer src="../Vista/alumnes.clase.js"></script>   
     <title>Document</title>
 </head>
 <body>
@@ -18,6 +19,6 @@ for ($i=0; $i < count($alumnes); $i++) {
 $html.="</table>";
 echo($html);
 ?>
-<button> Guardar</button>
+<input type="button" id="enviar" value="Enviar">
 </body>
 </html>
