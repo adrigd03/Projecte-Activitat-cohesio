@@ -15,10 +15,10 @@
   <!--Opcions -->
 <div class="contenidor">
 		<h1>Grups</h1>
-    <?php foreach ($grup as $grups): ?>
+    <?php foreach ($grups as $grup): ?>
     <div class="grup">
     <div class="card-body">
-    <h4 class="card-title"><?php echo $grup['nom'];?> </h4>  
+    <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=".$grup['id']."'>".$grup['nom']."</a>");?> </h4>  
     </div>
     </div>
     <?php endforeach; ?>
