@@ -9,10 +9,18 @@
 <body>
 <?php require_once("../Vista/navbar.php");
 //Muestra todas clases en forma de enlace que manda a una pagina que muestra los alumnos de esa clase.
-for ($i=0; $i < count($clases) ; $i++) {
-    echo("<a href='../Controlador/alumnes.clase.php?clase=".$clases[$i]["clase"]."'>".($clases[$i]["clase"])."</a>"); 
-    
-}
 ?>
+
+
+<div class="contenidor">
+		<h1>Grups</h1>
+    <?php
+    for ($i=0; $i < count($clases) ; $i++) {
+        echo("<div class='grup'> <div class='card-body'> <h4 class='card-title'> <a href='../Controlador/alumnes.clase.php?clase=".$clases[$i]["clase"]."'>".($clases[$i]["clase"])."</a></h4></div></div>"); 
+        
+    }
+    ?>
+  </div>
+  <br>
 </body>
 </html>
