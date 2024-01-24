@@ -32,19 +32,19 @@ $consulta->execute(["id" => $id]);
 $alumnes = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 // Agafar tots els alumnes de la taula alumnes que no estan en el grup
-$sql = "SELECT * FROM alumnes WHERE id_grup IS NULL";
+$sql = "SELECT * FROM alumnes WHERE id_grup IS NULL AND asistencia=1";
 $consulta = $pdo->prepare($sql);
 $consulta->execute();
 $disponibles = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 // Formatar les dades per mostrar-les a la vista html
 $alumnes = array_map(function($alumne){
-    return "<li class='list-group-item'>".$alumne["nom"]. $alumne['clase'] ."</li>";
+    return "<li class='list-group-item'>".$alumne["nom"]." - ". $alumne['clase'] ."</li>";
 }, $alumnes);
 $alumnes = implode("", $alumnes);
 
 $disponibles = array_map(function($alumne){
-    return "<li class='list-group-item'>".$alumne["nom"] . $alumne['clase'] . "<input type='checkbox' value='". $alumne['id'] . "'> </input>" ."</li>";
+    return "<li class='list-group-item'>".$alumne["nom"] ." - ". $alumne['clase'] . "<input type='checkbox' value='". $alumne['id'] . "'> </input>" ."</li>";
 }, $disponibles);
 $disponibles = implode("", $disponibles);
 
