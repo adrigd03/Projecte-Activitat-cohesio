@@ -23,11 +23,15 @@
     </div>
     <?php endforeach; ?>
 
-  </div>
-  <br>
+    <form action="../Controlador/crearGrupsAuto.php">
+      <input type="submit" onclick="return confirm('Estàs segur? S\'eliminaren tots els grups creats.')" value="Crear Grups Automàticament" />
+    </form>
+    
+</div>
+<br>
 
   
-</div>
+
 </body>
 </html>
 
