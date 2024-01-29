@@ -1,10 +1,7 @@
 <?php
 //inpares id del alumno y pares si viene o no.
-$alumnes=str_replace(",","",$_GET["alumnes"]);
+$alumnes=explode(",",$_GET["alumnes"]);
 
-$alumnes=str_split($alumnes,1);
-
-print_r($alumnes);
 require_once("../Controlador/db.php");
 $pdo = connectar();
 for ($i=0; $i < count($alumnes) ; $i+=2) { 
@@ -19,7 +16,6 @@ for ($i=0; $i < count($alumnes) ; $i+=2) {
         $consulta->fetch(PDO::FETCH_ASSOC);
     }
 }
-header("Location: ../Controlador/clases.php");
-exit();
+
 
 ?>

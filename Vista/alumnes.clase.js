@@ -15,7 +15,6 @@ function tractarDades(){
             LlistatAlumnes.push(alumneArray);
         }    
     }
-  
     window.location.href = "../Controlador/passarLlista.php?alumnes="+LlistatAlumnes;
 
 }
