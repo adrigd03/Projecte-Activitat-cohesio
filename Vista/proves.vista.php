@@ -23,14 +23,15 @@
         <button type="button" class="btn btn-secondary">Afegir Proves</button>
         <button type="button" class="btn btn-danger">Eliminar Proves</button>
     <?php foreach ($proves as $prova): ?>
-    <div class="grup">
+    <div class="article">
     <div class="card-body">
-    <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=".$prova['id']."'>".$proves['nom']."</a>");?> </h4>  
+        <h4 class="card-title"><?php echo $article['nom'];?></h4>
+        <p><?php echo $article['descripcio'];?></p>
+   <!-- <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=".$prova['id']."'>".$proves['nom']."</a>");?> </h4>  -->
     </div>
     </div>
     <?php endforeach; ?>
 
-   
     
 </div>
 <br>
