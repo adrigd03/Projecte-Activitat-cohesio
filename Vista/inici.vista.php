@@ -16,7 +16,7 @@
 		<h1>Inici</h1>
 
     <button><a href="../Controlador/grups.php">Crear/Moure Grups</a></button> 
-    <button><a href="">Crear/Modificar Proves</a></button> 
+    <button><a href="../Controlador/proves.php">Crear/Modificar Proves</a></button> 
     <button><a href="../Controlador/clases.php">Llistat Alumnat</a></button>
 
   
