@@ -39,8 +39,9 @@ function iniciarSession($correu){
     if($array[1]=="sapalomera.cat"&&str_contains($array[0],".")){
         //Profesor
         $role="Profe";
-    }
-    elseif($correu=="e.rubio@sapalomera.cat"){
+    }//sapalomeracohesio@gmail.com
+    //C0ntraseny@
+    elseif($correu=="sapalomeracohesio@gmail.com"){
         $role="Admin";
     }
     else{
