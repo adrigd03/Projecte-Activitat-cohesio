@@ -6,6 +6,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../Estils/estils.css">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script defer src="../Vista/grups.js"></script> 
 	<title>Inici</title>
 </head>
 <body>
@@ -16,15 +18,19 @@
 <div class="contenidor">
 		<h1>Grups</h1>
     <?php foreach ($grups as $grup): ?>
-    <div class="grup">
+    <div class="grup" id="<?php echo($grup['id']) ?>">
     <div class="card-body">
-    <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=".$grup['id']."'>".$grup['nom']."</a>");?> </h4>  
+    <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=".$grup['id']."'>".$grup['nom']."</a>");?><button class="eliminar">Eliminar</button><button class="canviar">Canviar Nom</button><button class="guardar" hidden>Guardar </button> </h4>  
     </div>
     </div>
     <?php endforeach; ?>
 
     <form action="../Controlador/crearGrupsAuto.php">
       <input type="submit" onclick="return confirm('Estàs segur? S\'eliminaren tots els grups creats.')" value="Crear Grups Automàticament" />
+    </form>
+
+    <form action="../Controlador/crearNouGrup.php">
+      <input type="submit" value="Crear Grup Nou"/>
     </form>
     
 </div>
