@@ -5,6 +5,7 @@ function eliminarGrup(event){
 function canviarNom(event){
     let id=event.target.parentElement.parentElement.parentElement.getAttribute("id");
     event.target.parentElement.firstChild.setAttribute("hidden","");
+    event.target.parentElement.children[2].setAttribute("hidden","");
     let input= document.createElement("input");
     input.setAttribute("type","text");
     input.setAttribute("value",event.target.parentElement.firstChild.firstChild.wholeText);

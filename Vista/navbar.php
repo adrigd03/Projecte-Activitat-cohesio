@@ -7,7 +7,7 @@ if( $_SESSION['role']=="Profe"):?>
   <h2 class="align-center">Professor</h2>
   <a href="../Controlador/inici.php">Inici</a>
   <a href="logout.php">Tancar Sessió</a>
-  <a href="">Horari Profesors</a>
+  <a href="../Controlador/horariProfessor.php">Horari Profesors</a>
   <a href="">Horari Alumnat</a>
   
 
@@ -21,7 +21,7 @@ if( $_SESSION['role']=="Profe"):?>
   <h2 class="align-center">Administrador</h2>
   <a href="../Controlador/inici.php">Inici</a>
   <a href="logout.php">Tancar Sessió</a>
-  <a href="">Horari Profesors</a>
+  <a href="../Controlador/horariProfessor.php">Horari Profesors</a>
   <a href="">Horari Alumnat</a>
   
 
