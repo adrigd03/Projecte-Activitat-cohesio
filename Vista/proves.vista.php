@@ -25,8 +25,8 @@
     <?php foreach ($proves as $prova): ?>
     <div class="article">
     <div class="card-body">
-        <h4 class="card-title"><?php echo $article['nom'];?></h4>
-        <p><?php echo $article['descripcio'];?></p>
+        <h4 class="card-title"><?php echo $prova['nom'];?></h4>
+        <p><?php echo $prova['descripcio'];?></p>
    <!-- <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=".$prova['id']."'>".$proves['nom']."</a>");?> </h4>  -->
     </div>
     </div>
