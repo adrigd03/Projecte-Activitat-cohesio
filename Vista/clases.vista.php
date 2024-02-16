@@ -13,7 +13,7 @@
 
 
 <div class="contenidor">
-		<h1>Grups</h1>
+		<h1>Classes</h1>
     <?php
     for ($i=0; $i < count($clases) ; $i++) {
         echo("<div class='grup'> <div class='card-body'> <h4 class='card-title'> <a href='../Controlador/alumnes.clase.php?clase=".$clases[$i]["clase"]."'>".($clases[$i]["clase"])."</a></h4></div></div>"); 
