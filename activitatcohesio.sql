@@ -86,7 +86,8 @@ CREATE TABLE `proves` (
   `id` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `descripcio` text NOT NULL,
-  `professsor` varchar(80) NOT NULL,
+  `lloc` varchar(50) NOT NULL,
+  `professor` varchar(80) NOT NULL,
   `material` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
