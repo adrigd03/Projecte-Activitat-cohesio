@@ -21,8 +21,8 @@ if((count($grups)/2)!=count($proves)){
 }
 else{
 $html="<table id='tabla'><tr><th></th>";
-for ($i=0; $i < count($proves) ; $i++){
-  $html.="<th>".$proves[$i]["professor"]." (".$proves[$i]["nom"].") "."</th>";
+for ($i=0; $i < count($grups) ; $i++){
+  $html.="<th>".$grups[$i]["nom"]."</th>";
 }
 $html.="</tr>";
 $hora="16:00";
@@ -36,16 +36,22 @@ for ($i=0; $i < count($grups)/2 ; $i++){
     $horaArray[1]=strval(intval($horaArray[1])+15)."";
   }
   $hora=implode(":", $horaArray);
-  for ($j=0; $j <count($grups)/2 ; $j++) { 
-    $html.="<td>".$grups1[$j]["nom"]." vs ".$grups2[$j]["nom"]."</td>";
+
+ 
+
+  for ($j=0; $j <count($proves) ; $j++) {
+    $html.="<td>".$proves[$j]["nom"]."</td>"; 
+    
+  }
+  for ($j=0; $j <count($proves2) ; $j++) { 
+    $html.="<td>".$proves2[$j]["nom"]."</td>";
   }
   $html.="</tr>";
-  $grup1=array_shift($grups1);
-  array_push($grups1,$grup1);
+  $prova=array_pop($proves);
+  array_unshift($proves,$prova);
 
-  $grup2=array_pop($grups2);
-  array_unshift($grups2,$grup2);
-
+  $prova=array_shift($proves2);
+  array_push($proves2,$prova);
 }
 
 $html.="</table>";
