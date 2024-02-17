@@ -59,5 +59,5 @@
 
 
 </html>
-<script src="./Controlador/signin.mjs"></script>
+<script src="../Controlador/signin.mjs"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
