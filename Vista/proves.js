@@ -1,35 +1,17 @@
 
 const botoAfegirProva = document.getElementById("afegir_prova");
 const formulariProva = document.getElementById("formulari_prova");
-/*
-botoAfegirProva.addEventListener("click", () => {
-    formulariProva.hidden = false;
-})
-
-
-formulariProva.addEventListener("click", (e) => {
-    if (e.target === formulariProva) {
-      formulariProva.hidden = true;
-    }
-  });
- */
+//const campsObligatoris = ["nom","descripcio", "lloc","professor","material"];
   
 
 
 botoAfegirProva.addEventListener("click", () => {
+  if(formulariProva.hidden === true){
      formulariProva.hidden = false;
-  // formulariProva.classList.toggle("visible");
+  } else if (formulariProva.hidden === false){
+    formulariProva.hidden = true
+  }
+});
 
-})
 
-
-formulariProva.addEventListener("click", (e) => {
-  if(!formulariProva.classList.contains("visible")){
-    formulariProva.style.display = "none";
-  } 
-    /*
-    if (e.target === formulariProva) {
-      formulariProva.hidden = true;
-    }  */
-  }); 
 

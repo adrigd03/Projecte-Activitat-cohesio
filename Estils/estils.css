@@ -43,23 +43,6 @@ h4 {
 	font-weight: black;
 }
 
-.contenidor .articles {
-	margin-bottom: 20px;
-}
-
-.contenidor .articles ul button {
-	list-style: none;
-}
-
-.contenidor .articles ul li button {
-	padding:15px 10px;
-	border-bottom: 1px solid #c8c8c8;
-}
-
-
-
-
-
 /* Navbar */
  .navbar {
             background-color: #616161;
@@ -127,7 +110,11 @@ h4 {
             box-sizing: border-box;
           }
 
+          
+          
 
 
+
+          
 		 
     
