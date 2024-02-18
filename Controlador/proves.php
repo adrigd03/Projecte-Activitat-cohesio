@@ -78,7 +78,7 @@ if(isset($_POST['eliminar'])){
     $stmt = $pdo->prepare("SELECT * FROM proves WHERE nom = '$nom'");
     $stmt->execute();
     $comprv = $stmt->fetch(PDO::FETCH_ASSOC);   
-    if($comprv){
+    if(!$comprv){
         echo '<div class="alert alert-danger" role="alert">El nom que heu introduit no existeix!</div>';
     }  else{ 
     // Crear la consulta SQL per eliminar la prova
