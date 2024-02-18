@@ -6,6 +6,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../Estils/estils.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 	<title>Inici</title>
 </head>
 <body>
@@ -14,11 +19,11 @@
   <!--Opcions -->
 <div class="contenidor">
 		<h1>Inici</h1>
-
-    <button><a href="../Controlador/grups.php">Crear/Moure Grups</a></button> 
-    <button><a href="../Controlador/proves.php">Crear/Modificar Proves</a></button> 
-    <button><a href="../Controlador/clases.php">Llistat Alumnat</a></button>
-
+	<div class="btn-group-vertical d-flex justify-content-center">
+    <button class="btn "><a href="../Controlador/grups.php">Crear/Moure Grups</a></button> 
+    <button class="btn "><a href="../Controlador/proves.php">Crear/Modificar Proves</a></button> 
+    <button class="btn "><a href="../Controlador/clases.php">Llistat Alumnat</a></button>
+	</div>
   
 </div>
 </body>
