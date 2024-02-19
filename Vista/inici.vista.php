@@ -20,9 +20,14 @@
 <div class="contenidor">
 		<h1>Inici</h1>
 	<div class="btn-group-vertical d-flex justify-content-center">
-    <button class="btn "><a href="../Controlador/grups.php">Crear/Moure Grups</a></button> 
+    <?php if( $_SESSION['role']=="Admin"):?>
+    <button class="btn "><a href="../Controlador/grups.php">Crear/Moure Grups</a></button>
+    <?php endif; ?> 
     <button class="btn "><a href="../Controlador/proves.php">Crear/Modificar Proves</a></button> 
     <button class="btn "><a href="../Controlador/clases.php">Llistat Alumnat</a></button>
+    <?php if( $_SESSION['role']=="Profe"):?>
+    <button class="btn "><a href="../Controlador/horaActivitat.php">Puntuar Activitats</a></button>
+    <?php endif; ?> 
 	</div>
   
 </div>
