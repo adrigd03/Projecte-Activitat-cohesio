@@ -43,7 +43,7 @@
                             <div class="row ">
                                 <!-- Entrar com anonim -->
                                 <div class="col text-center">
-                                    <button type="button" class="btn btn-primary">Entrar como anonim</button>
+                                    <button type="button" onclick="window.location='../Controlador/horariAlumne.php';" class="btn btn-primary">Entrar como anonim</button>
 
                                 </div>
                             </div>
