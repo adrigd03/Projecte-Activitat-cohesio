@@ -18,16 +18,21 @@
 <?php require_once("../Vista/navbar.php"); ?>
   <!--Opcions -->
 <div class="contenidor">
-		<h1>Inici</h1>
+		<h1>Gestió</h1>
 	<div class="btn-group-vertical d-flex justify-content-center">
     <?php if( $_SESSION['role']=="Admin"):?>
     <button class="btn "><a href="../Controlador/grups.php">Crear/Moure Grups</a></button>
     <?php endif; ?> 
     <button class="btn "><a href="../Controlador/proves.php">Crear/Modificar Proves</a></button> 
-    <button class="btn "><a href="../Controlador/clases.php">Llistat Alumnat</a></button>
+    <button class="btn "><a href="../Controlador/clases.php">Passar Llista</a></button> 
+	</div>
+
+  <h1>Durant l'Activitat</h1>
+	<div class="btn-group-vertical d-flex justify-content-center">
     <?php if( $_SESSION['role']=="Profe"):?>
     <button class="btn "><a href="../Controlador/horaActivitat.php">Puntuar Activitats</a></button>
     <button class="btn "><a href="../Controlador/classificacio.php">Classificació General</a></button>
+    <button class="btn "><a href="../Controlador/clasesNoVingut.php">Llistat Alumnat Que No Han Vingut</a></button>
     <?php endif; ?> 
 	</div>
   
