@@ -27,12 +27,14 @@
     <button class="btn "><a href="../Controlador/clases.php">Passar Llista</a></button> 
 	</div>
 
-  <h1>Durant l'Activitat</h1>
+  
 	<div class="btn-group-vertical d-flex justify-content-center">
     <?php if( $_SESSION['role']=="Profe"):?>
+      <h1>Durant l'Activitat</h1>
     <button class="btn "><a href="../Controlador/horaActivitat.php">Puntuar Activitats</a></button>
     <button class="btn "><a href="../Controlador/classificacio.php">Classificació General</a></button>
     <button class="btn "><a href="../Controlador/clasesNoVingut.php">Llistat Alumnat Que No Han Vingut</a></button>
+    <button class="btn "><a href="../Controlador/edicioGrups.php">Edició De Grups</a></button>
     <?php endif; ?> 
 	</div>
   
