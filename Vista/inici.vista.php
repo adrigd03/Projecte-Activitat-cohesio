@@ -27,6 +27,7 @@
     <button class="btn "><a href="../Controlador/clases.php">Llistat Alumnat</a></button>
     <?php if( $_SESSION['role']=="Profe"):?>
     <button class="btn "><a href="../Controlador/horaActivitat.php">Puntuar Activitats</a></button>
+    <button class="btn "><a href="../Controlador/classificacio.php">Classificació General</a></button>
     <?php endif; ?> 
 	</div>
   
