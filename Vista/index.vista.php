@@ -16,7 +16,9 @@
 </head>
 
 <body>
-
+<?php if( isset($_GET["missatge"])):?>
+      <script>alert(<?php echo($_GET["missatge"]) ?>)</script>
+    <?php endif; ?>
 
     <div class="vh-100 d-flex justify-content-center align-items-center">
         <div class="container">

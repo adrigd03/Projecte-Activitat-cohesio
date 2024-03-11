@@ -17,6 +17,9 @@
     <script defer src="../Vista/proves.js"></script>
 
     <title>Proves</title>
+    <link rel="stylesheet" href="../Estils/mapa.css">
+  <script type="module" src="../Vista/mapa.js"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZN-QdRh6ZIErT1L2E29l9AOng1fNphZY&callback=crearMapa"></script>
 </head>
 
 <body>
@@ -73,6 +76,11 @@
                     }
                     ?>
                     <br>
+                    <label for="geoX">GeoX:</label>
+                    <input type="number" step="0.0001" name="geoX" id="geoX">
+                    <label for="geoY">GeoY:</label>
+                    <input type="number" step="0.0001" name="geoY" id="geoY">
+                    <div id="mapa" class="mapa"></div>
                     <button type="submit" name="crear" class="btn btn-primary">Crear </button>
                 </form>
             </div>

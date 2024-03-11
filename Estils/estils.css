@@ -92,12 +92,13 @@ h4 {
           input[type=submit]:hover {
             background-color: #535454;
           }
-          
+          /*
           div {
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
           }
+          */
 
 		  input[type=number], select {
             width: 100%;
@@ -126,6 +127,7 @@ select {
   height: 400px;
   position: relative;
 }
+/*
 .mapa{
 
   max-height:100%; 
@@ -143,6 +145,7 @@ select {
           .btn-group {
             width:  100%; 
         }  
+        */
         
           
 
