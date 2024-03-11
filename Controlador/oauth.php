@@ -45,7 +45,9 @@ function iniciarSession($correu){
         $role="Admin";
     }
     else{
-        throw new Error("Error amb les credencials.");
+        header("Location: ../Controlador/index.php?missatge='Nómes poden iniciar sessió l\'admin i els professors.'");
+    exit();
+        
     }
 
     session_start();

@@ -12,11 +12,11 @@
 <?php require_once("../Vista/navbar.php");
 echo("<h4>".$clase."</h4>");
 //Crea una tabla en la que sale el nombre y si va a assistir a la actividad en la cual cada fila tiene como id el id del alumno.
-$html="<table id='tabla'><tr><th>Nom</th><th>Assistencia</th></tr>";
+$html="<table style='width:20rem;' id='tabla'><tr><th>Alumne</th></tr>";
 for ($i=0; $i < count($alumnes); $i++) {
 
-    if($alumnes[$i]["asistencia"]==1){$html.= "<tr id='".$alumnes[$i]["id"]."'><td>".$alumnes[$i]["nom"]."</td><td>".'<input type="checkbox" checked="checked">'."</td></tr>";}
-    else{$html.= "<tr id='".$alumnes[$i]["id"]."'><td>".$alumnes[$i]["nom"]."</td><td>".'<input type="checkbox">'."</td></tr>";}
+    $html.= "<tr id='".$alumnes[$i]["id"]."'><td>".$alumnes[$i]["nom"]."</td></tr>";
+    
 }
 $html.="</table>";
 echo($html);
