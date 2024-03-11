@@ -30,6 +30,7 @@
   <h1>Durant l'Activitat</h1>
 	<div class="btn-group-vertical d-flex justify-content-center">
     <?php if( $_SESSION['role']=="Profe"):?>
+    <button class="btn "><a href="../Controlador/clasesActivitat.php">Passar Llista</a></button>
     <button class="btn "><a href="../Controlador/horaActivitat.php">Puntuar Activitats</a></button>
     <button class="btn "><a href="../Controlador/classificacio.php">Classificació General</a></button>
     <button class="btn "><a href="../Controlador/clasesNoVingut.php">Llistat Alumnat Que No Han Vingut</a></button>
