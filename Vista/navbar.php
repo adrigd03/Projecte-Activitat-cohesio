@@ -1,11 +1,14 @@
 <?php if (!isset($_SESSION['role'])) : ?>
 
-  <div class="navbar">
-
-    <h2 class="align-center" style="color:aliceblue">Alumne</h2>
-    <a href="../Controlador/index.php">Login</a>
-
-
+  <div class="navbara container-fluid pb-4">
+    <div class="row">
+      <div class="col col-12 text-center mt-3">
+        <h2 class="align-center" style="color:aliceblue">Alumne</h2>
+      </div>
+    </div>
+    <div class="row text-center justify-content-center mt-3">
+      <div class="col col-1"><a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="../Controlador/index.php">Login</a></div>
+    </div>
   </div>
 
 <?php elseif ($_SESSION['role'] == "Profe") : ?>

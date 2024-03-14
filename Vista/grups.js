@@ -1,7 +1,7 @@
 function eliminarGrup(event){
     let id=event.target.parentElement.parentElement.getAttribute("id");
-console.log(id);
-    //window.location.href = "../Controlador/eliminarGrup.php?id="+id;
+
+    window.location.href = "../Controlador/eliminarGrup.php?id="+id;
 }
 function canviarNom(event){
     event.target.parentElement.children[3].setAttribute("hidden","");

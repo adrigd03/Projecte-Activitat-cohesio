@@ -9,7 +9,7 @@
     border: 1px solid #ddd;
     padding: 8px;
   }
-  
+  #tabla tr{background-color: #ffffff;}
   #tabla tr:nth-child(even){background-color: #f2f2f2;}
   
   #tabla tr:hover {background-color: #ddd;}

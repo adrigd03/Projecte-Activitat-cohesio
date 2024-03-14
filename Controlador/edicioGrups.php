@@ -1,4 +1,9 @@
 <?php 
+session_start();
+if(!isset($_SESSION["correu"])){
+    header("Location: ../Controlador/index.php");
+    exit();
+}
 //Obtiene todas los grupos.
 require_once("../Controlador/db.php");
 $pdo = connectar();
