@@ -90,6 +90,18 @@ if(isset($_POST['eliminar'])){
     }
     }
 
+    if(isset($_POST['id'])){
+        $id = $_POST['id'];
+        $stmt = $pdo->prepare("DELETE FROM proves WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+           // echo 'success';       
+           header("Location: ./proves.php");  
+           exit(); 
+        
+    }
+
+
 // Recollim les dades del formulari per poder modificar prova
 if(isset($_POST['modificar'])){
     if(empty($nom) || empty($descripcio) || empty($lloc) || empty($professor) || empty($material)) {

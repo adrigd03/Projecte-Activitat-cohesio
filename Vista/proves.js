@@ -38,6 +38,7 @@ botoModificarProva.addEventListener("click", () => {
 
 
 // put marker on img mapa on click
+/*
 imgMapa.addEventListener("click", (e) => {
   if (e.target !== e.currentTarget) {
     return;
@@ -66,13 +67,48 @@ imgMapa.addEventListener("click", (e) => {
   input = document.getElementById("xy");
   input.value = xRel + "," + yRel;
 
+}); */
 
 
+let eliminar = document.getElementsByClassName("eliminar")[0];
 
-
-
+eliminar.addEventListener("click",() => {
+  let id = eliminar.id;
+  console.log(id);
+  if(confirm("Estas segur de que vols eliminar aquesta prova?")){
+    $.ajax({
+      url: '../Controlador/proves.php',
+      type: 'POST',
+      data: {id: id},
+      success: function(response) {
+        if(response.trim().toLowerCase() == 'success'){
+          alert('Prova Eliminada');
+          location.reload();
+        } 
+      }
+    });
+  }
 });
 
 
 
+/*
+function eliminarProva(id) {
+    console.log(`id: ${id}`)
+    if(confirm("Estas segur de que vols eliminar aquesta prova?")){
+      $.ajax({
+        url: '../Controlador/eliminarProva.php',
+        type: 'POST',
+        data: {id: id},
+        succes: function(response) {
+          if(response == 'succes'){
+          alert('Prova Eliminada');
+          location.reload();
+          } else {
+            alert('Error al eliminar la prova');
+          }
+        }
+      });
+    } 
+} */
 

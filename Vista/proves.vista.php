@@ -167,6 +167,7 @@
                         <p class="card-text">Lloc: <?php echo $prova['lloc']; ?></p>
                         <p class="card-text">Professor: <?php echo $prova['professor']; ?></p>
                         <p class="card-text">Material: <?php echo $prova['material']; ?></p>
+                        <button class="btn btn-danger eliminar"  id="<?php echo $prova['id']; ?>">Eliminar Prova</button>
                         <!-- <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=" . $prova['id'] . "'>" . $proves['nom'] . "</a>"); ?> </h4>  -->
                     </div>
                 </div>
