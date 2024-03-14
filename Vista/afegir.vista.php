@@ -2,14 +2,19 @@
 <html>
 
 <head>
-    <title>Grup</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Estils/estils.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="../Estils/estils.css">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script defer src="../Vista/grups.js"></script>
+  <title>Grup</title></head>
 
 <body>
-    
+<?php require_once("../Vista/navbar.php");?>
     <div class="container">
-    <a href="../Controlador/grups.php"><button type="button" class="btn-close align-self-end" aria-label="Close"></button></a>
+    
 
         <h1><?php echo $grup["nom"] ?></h1>
 
@@ -42,6 +47,7 @@
                         <?php print_r($alumnes); ?>
                     </ul>
                     <button name="eliminar" type="submit" class="btn btn-primary ">Eliminar</button>
+                    <a href="../Controlador/grups.php"><button type="button" class="btn btn-secondary align-self-end" aria-label="Close">Tornar Enrere</button></a>
                 </form>
             </div>
 
@@ -54,6 +60,7 @@
                         <?php print_r($disponibles); ?>
                     </ul>
                     <button name="afegir" type="submit" class="btn btn-primary ">Afegir</button>
+                    <a href="../Controlador/grups.php"><button type="button" class="btn btn-secondary align-self-end" aria-label="Close">Tornar Enrere</button></a>
                 </form>
             </div>
         </div>

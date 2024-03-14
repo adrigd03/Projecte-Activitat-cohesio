@@ -53,19 +53,12 @@ h4 {
 }
 
 /* Navbar */
-.navbar {
+.navbara {
   background-color: #616161;
   overflow: hidden;
 }
 
-.navbar a {
-  float: right;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+
 
         
         input[type=text], select {

@@ -21,7 +21,7 @@
     <?php endif; ?>
 
     <div class="vh-100 d-flex justify-content-center align-items-center">
-        <div class="container">
+        <div class="container text-start">
             <div class="row d-flex justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6">
                     <div class="border border-3 border-primary"></div>
@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="row justify-content-center mb-3">
-                                <div class="col ">
+                                <div class="col">
                                     <div id="g_id_onload" data-client_id="281315218974-v6a5f0cgdkd40afl85jkvmcpvermp2er.apps.googleusercontent.com" data-callback="onSignIn">
                                     </div>
                                     <div class="g_id_signin" data-type="standard"></div>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="row ">
                                 <!-- Entrar com anonim -->
-                                <div class="col text-center">
+                                <div class="col text-start">
                                     <button type="button" onclick="window.location='../Controlador/horariAlumne.php';" class="btn btn-primary">Entrar como anonim</button>
 
                                 </div>

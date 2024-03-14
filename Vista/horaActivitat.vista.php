@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="../Estils/estils.css">
     <link rel="stylesheet" href="../Estils/table.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="../js/jquery.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -54,18 +54,22 @@ $html.="</table>";
 echo($html);
 }
 ?>
+<div class="container-fluid">
 <form>
-
+<label for="activitat">Activitat</label>
 <select id="activitat"></select>
 
+<label for="hora">Hora</label>
 <select id="hora"></select>
 
+<label for="hora">Guanyador</label>
 <div id="grup1"></div>
 
 <div id="grup2"></div>
 
-<button type="submit" id="enviar">Enviar</button>
+<button class="btn btn-primary" type="submit" id="enviar">Enviar</button>
 
 </form>
+</div>
 </body>
 </html>
