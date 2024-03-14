@@ -76,11 +76,13 @@
                     }
                     ?>
                     <br>
+                    <div hidden>
                     <label for="geoX">GeoX:</label>
                     <input type="number" step="0.0001" name="geoX" id="geoX">
                     <label for="geoY">GeoY:</label>
                     <input type="number" step="0.0001" name="geoY" id="geoY">
                     <div id="mapa" class="mapa"></div>
+                    </div>
                     <button type="submit" name="crear" class="btn btn-primary">Crear </button>
                 </form>
             </div>

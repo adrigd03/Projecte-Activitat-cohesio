@@ -63,7 +63,7 @@
   }
 
   ?>
-  <div id="mapa" class="mapa"></div>
+  <div hidden id="mapa" class="mapa"></div>
 </body>
 
 </html>
