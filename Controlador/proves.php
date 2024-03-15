@@ -95,8 +95,7 @@ if(isset($_POST['eliminar'])){
         $stmt = $pdo->prepare("DELETE FROM proves WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-           // echo 'success';       
-           header("Location: ./proves.php");  
+           echo 'success';        
            exit(); 
         
     }

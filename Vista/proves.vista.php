@@ -159,7 +159,7 @@
         </div>
         <!-- MOSTREM PROVES-->
         <?php foreach ($proves as $prova) : ?>
-            <div class="d-flex flex-wrap justify-content-center">
+            <div class="d-flex flex-wrap justify-content-center" data-id=<?php echo $prova['id'] ?>>
                 <div class="card" style="width:400px">
                     <div class="card-body">
                         <h4 class="card-title"> Nom de la prova: <?php echo $prova['nom']; ?></h4>

@@ -81,11 +81,13 @@ eliminar.addEventListener("click",() => {
       type: 'POST',
       data: {id: id},
       success: function(response) {
+        console.log(response);
         if(response.trim().toLowerCase() == 'success'){
-          alert('Prova Eliminada');
-          location.reload();
+          eliminar.parentElement.parentElement.parentElement.remove();
+          
         } 
       }
+
     });
   }
 });
