@@ -66,30 +66,8 @@ if(isset($_POST['crear'])){
     }
 }
 
-// Recollim el nom per poder eliminar prova
 
-if(isset($_POST['eliminar'])){
-    if(empty($nom) ) {
-        if(empty($_POST['nom'])){
-            $errors["nom"] = "Ompliu el nom";
-        }
-    } 
-    else {
-    $stmt = $pdo->prepare("SELECT * FROM proves WHERE nom = '$nom'");
-    $stmt->execute();
-    $comprv = $stmt->fetch(PDO::FETCH_ASSOC);   
-    if(!$comprv){
-        echo '<div class="alert alert-danger" role="alert">El nom que heu introduit no existeix!</div>';
-    }  else{ 
-    // Crear la consulta SQL per eliminar la prova
-    $stmt = $pdo->prepare("DELETE FROM proves WHERE nom = :nom");
-    $stmt->bindParam(':nom', $nom);
-    $stmt->execute();
-    header("Location: ./proves.php");
-        }
-    }
-    }
-
+//eliminar Prova
     if(isset($_POST['id'])){
         $id = $_POST['id'];
         $stmt = $pdo->prepare("DELETE FROM proves WHERE id = :id");
@@ -101,12 +79,11 @@ if(isset($_POST['eliminar'])){
     }
 
 
+
 // Recollim les dades del formulari per poder modificar prova
 if(isset($_POST['modificar'])){
-    if(empty($nom) || empty($descripcio) || empty($lloc) || empty($professor) || empty($material)) {
-        if(empty($_POST['nom'])){
-            $errors["nom"] = "Ompliu el nom";
-        }
+    if(  empty($descripcio) || empty($lloc) || empty($professor) || empty($material)) {
+       
         if(empty($_POST['descripcio'])){
             $errors["descripcio"] = "Ompliu la descripció";
         }
@@ -130,12 +107,12 @@ if(isset($_POST['modificar'])){
             
         } else{
     // Crear la consulta SQL per a inserir la nova prova
-            $stmt = $pdo->prepare("UPDATE proves SET descripcio = :descripcio, lloc = :lloc, professor = :professor, material = :material WHERE nom = :nom");
+            $stmt = $pdo->prepare("UPDATE proves SET descripcio = :descripcio, lloc = :lloc, professor = :professor, material = :material WHERE id = :id");
             $stmt->bindParam(':descripcio', $descripcio);
             $stmt->bindParam(':lloc', $lloc);
             $stmt->bindParam(':professor', $professor);
             $stmt->bindParam(':material', $material);
-            $stmt->bindParam(':nom', $nom);
+            $stmt->bindParam(':id', $_POST['idProva']);
             $stmt->execute();
             header("Location: ./proves.php");
         }

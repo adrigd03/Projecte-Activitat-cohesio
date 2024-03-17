@@ -14,24 +14,6 @@ botoAfegirProva.addEventListener("click", () => {
   }
 });
 
-botoEliminarProva.addEventListener("click", () => {
-  if(formulariEliminar.hidden === true){
-     formulariEliminar.hidden = false;
-  } else if (formulariEliminar.hidden === false){
-    formulariEliminar.hidden = true
-  }
-});
-
-
-botoModificarProva.addEventListener("click", () => {
-  if(formulariModificar.hidden === true){
-     formulariModificar.hidden = false;
-  } else if (formulariModificar.hidden === false){
-    formulariModificar.hidden = true
-  }
-});
-
-
 
 
 
@@ -70,12 +52,14 @@ imgMapa.addEventListener("click", (e) => {
 }); */
 
 
-let eliminar = document.getElementsByClassName("eliminar")[0];
+let eliminar = document.getElementsByClassName("eliminar");
 
-eliminar.addEventListener("click",() => {
-  let id = eliminar.id;
+ for (let i = 0; i < eliminar.length; i++){
+eliminar[i].addEventListener("click",() => {
+  let id = eliminar[i].getAttribute('data-id');
   console.log(id);
   if(confirm("Estas segur de que vols eliminar aquesta prova?")){
+   // event.preventDefault();
     $.ajax({
       url: '../Controlador/proves.php',
       type: 'POST',
@@ -83,34 +67,26 @@ eliminar.addEventListener("click",() => {
       success: function(response) {
         console.log(response);
         if(response.trim().toLowerCase() == 'success'){
-          eliminar.parentElement.parentElement.parentElement.remove();
-          
+          eliminar[i].parentElement.parentElement.parentElement.remove();
+         
         } 
       }
 
     });
   }
 });
+ }
 
 
 
-/*
-function eliminarProva(id) {
-    console.log(`id: ${id}`)
-    if(confirm("Estas segur de que vols eliminar aquesta prova?")){
-      $.ajax({
-        url: '../Controlador/eliminarProva.php',
-        type: 'POST',
-        data: {id: id},
-        succes: function(response) {
-          if(response == 'succes'){
-          alert('Prova Eliminada');
-          location.reload();
-          } else {
-            alert('Error al eliminar la prova');
-          }
-        }
-      });
-    } 
-} */
+$(document).ready(function() {
+  $(".editar-prova").click(function () {
+     var idProva = $(this).data('id');
+     
+     $('#idProva').val(idProva);
+     $("#modalEditarProva").modal('show');
+  });
+});
+
+
 
