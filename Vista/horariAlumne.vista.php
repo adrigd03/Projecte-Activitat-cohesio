@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  
+
   <link rel="stylesheet" href="../Estils/table.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
@@ -42,10 +42,10 @@
 
 
       for ($j = 0; $j < count($proves); $j++) {
-        $html .= "<td>" . $proves[$j]["nom"] . "</td>";
+        $html .= "<td>" . $proves[$j]["nom"] . " (" . $proves[$j]["lloc"] . ") </td>";
       }
       for ($j = 0; $j < count($proves2); $j++) {
-        $html .= "<td>" . $proves2[$j]["nom"] . "</td>";
+        $html .= "<td>" . $proves2[$j]["nom"] . " (" . $proves[$j]["lloc"] . ") </td>";
       }
       $html .= "</tr>";
       $prova = array_pop($proves);
@@ -60,18 +60,19 @@
   }
   ?>
 
-<table hidden>
-  <tbody id=ub>
-    <?php foreach($proves as $key=>$value): ?>
-    <tr>
-      <td><?= $value["nom"]; ?></td>
-        <td><?= $value["lat"]; ?></td>
-        <td><?= $value["lng"]; ?></td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
-  <div id="mapa" class="mapa"></div>
+  <table hidden>
+    <tbody id=ub>
+      <?php foreach ($proves as $key => $value) : ?>
+        <tr>
+          <td><?= $value["nom"]; ?></td>
+          <td><?= $value["lat"]; ?></td>
+          <td><?= $value["lng"]; ?></td>
+          <td><?= $value["lloc"]; ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+  <div id="mapa" class="mapa" style="margin: auto; margin-top: 4rem;"></div>
 </body>
 
 </html>

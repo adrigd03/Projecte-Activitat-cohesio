@@ -32,6 +32,7 @@ async function crearMapa(divMap, goMaps,geoX,geoY) {
             center: latLng,    // Latitut i longitut del centre del mapa
             zoom: 19,
             mapId: "DEMO_MAP_ID",                            // Ampliació
+            mapTypeId: google.maps.MapTypeId.SATELLITE
         });
 
     marcarSaPa(goMaps);

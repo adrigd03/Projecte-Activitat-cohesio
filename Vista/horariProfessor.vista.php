@@ -9,6 +9,9 @@
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <link rel="stylesheet" href="../Estils/estils.css">
 	<title>Horari Professor</title>
+  <link rel="stylesheet" href="../Estils/mapa.css">
+  <script type="module" src="../Vista/horariAlumne.js"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZN-QdRh6ZIErT1L2E29l9AOng1fNphZY&callback=crearMapa"></script>
 </head>
 <body>
 <?php require_once("../Vista/navbar.php");
@@ -51,6 +54,20 @@ echo($html);
 }
 
 ?>
+
+<table hidden>
+    <tbody id=ub>
+      <?php foreach ($proves as $key => $value) : ?>
+        <tr>
+          <td><?= $value["nom"]; ?></td>
+          <td><?= $value["lat"]; ?></td>
+          <td><?= $value["lng"]; ?></td>
+          <td><?= $value["lloc"]; ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+  <div id="mapa" class="mapa" style="margin: auto; margin-top: 4rem;"></div>
 
 </body>
 </html>

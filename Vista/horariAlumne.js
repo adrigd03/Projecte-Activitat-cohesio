@@ -30,12 +30,13 @@ async function crearMapa(divMap, goMaps) {
             center: { lat: 41.67828430583841, lng: 2.7804561010212345 },    // Latitut i longitut del centre del mapa
             zoom: 19,
             mapId: "DEMO_MAP_ID",                            // Ampliació
+            mapTypeId: google.maps.MapTypeId.SATELLITE
         });
 
     for (let index = 0; index < document.getElementById("ub").children.length; index++) {
             const element = document.getElementById("ub").children[index];
             
-            gMark=crearMarcador(parseFloat(element.children[1].firstChild.wholeText),parseFloat(element.children[2].firstChild.wholeText),element.children[0].firstChild.wholeText);
+            gMark=crearMarcador(parseFloat(element.children[1].firstChild.wholeText),parseFloat(element.children[2].firstChild.wholeText),element.children[0].firstChild.wholeText +"\n"+element.children[3].firstChild.wholeText);
             gMark.setMap(goMaps);
         }
 
