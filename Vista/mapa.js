@@ -39,7 +39,7 @@ async function crearMapa(divMap, goMaps,geoX,geoY) {
 
     // Create the initial InfoWindow.
     infoWindow = new google.maps.InfoWindow({
-        content: "Click the map to get Lat/Lng!",
+        content: "Click en el mapa per afegir les coordenades!",
         position: latLng,
     });
 
