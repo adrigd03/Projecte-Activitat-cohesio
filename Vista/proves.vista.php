@@ -108,7 +108,7 @@
         </div>
     </div>
     <div class="container-fluid justify-content-center">
-        <div class="row row-cols-1 row-cols-md-4 g-10 text-center">
+        <div class="row row-cols-1 row-cols-md-4 g-10 text-center justify-content-center">
             <!-- MOSTREM PROVES-->
             <?php foreach ($proves as $prova) : ?>
                 <div class="col mb-3 mt-3" data-id=<?php echo $prova['id'] ?>>
