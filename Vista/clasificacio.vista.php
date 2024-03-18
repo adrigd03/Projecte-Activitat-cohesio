@@ -23,7 +23,7 @@
       <div class="row row-cols-1 row-cols-md-2 text-center justify-content-center">
         <?php
         for ($i = 0; $i < count($grups); $i++) {
-          echo ("<div class='card grup text-center mx-2 my-2' id='".($grups[$i]["id"])."'> <div class='card-body'> <h4 class='card-title' style='display:inline'>" . ($i + 1) . ". </h4><h4 style='display:inline'>". ($grups[$i]["nom"]) ."</h4><h5> Victories: " . ($grups[$i]["victories"]) . "</h5><hr><button class='diploma btn btn-dark'>Generar Diplomes</button></div></div>");
+          echo ("<div class='card grup text-center mx-2 my-2' id='".($grups[$i]["id"])."'> <div class='card-body'> <h4 class='card-title' style='display:inline' id='".($grups[$i]["imatge"])."'>" . ($i + 1) . ". </h4><h4 style='display:inline'>". ($grups[$i]["nom"]) ."</h4><h5> Victories: " . ($grups[$i]["victories"]) . "</h5><hr><button class='diploma btn btn-dark'>Generar Diplomes</button></div></div>");
         }
         ?>
       </div>

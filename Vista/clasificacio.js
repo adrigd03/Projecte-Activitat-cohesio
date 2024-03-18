@@ -7,13 +7,13 @@ function setPrint() {
     this.contentWindow.print();
 }
 function imprimir(e) {
-    
     let grup = {
         id: e.target.parentElement.parentElement.getAttribute("id"),
         posicio: e.target.parentElement.children[0].firstChild.wholeText,
-        nom: e.target.parentElement.children[1].firstChild.wholeText
+        nom: e.target.parentElement.children[1].firstChild.wholeText,
+        ruta: e.target.parentElement.children[0].getAttribute("id")
     }
-    localStorage.setItem("testJSON", JSON.stringify(grup));
+    localStorage.setItem("grup", JSON.stringify(grup));
     const hideFrame = document.createElement("iframe");
     hideFrame.onload = setPrint;
     hideFrame.style.display = "none"; // hide iframe
