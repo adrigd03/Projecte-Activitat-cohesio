@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estils/estils.css">
     <link rel="stylesheet" href="../Estils/table.css">
-    <script defer src="../Vista/alumnes.clase.js"></script>  
+    <script defer src="../Vista/llista.activitat.js"></script>  
     <title>Passar llista-Durant l'activitat</title>
 </head>
 <body>

@@ -1,4 +1,4 @@
-// Durant Gestió:
+//Durant l'activitat:
 function tractarDades(){
     let trArray = document.getElementsByTagName("tr");
     let LlistatAlumnes=[];
@@ -16,11 +16,8 @@ function tractarDades(){
             LlistatAlumnes.push(alumneArray);
         }    
     }
-    window.location.href = "../Controlador/passarLlista.php?alumnes="+LlistatAlumnes;
+    window.location.href = "../Controlador/passarLlistaActivitat.php?alumnes="+LlistatAlumnes;
 
 }
 
 document.getElementById("enviar").addEventListener("click",tractarDades);
-
-
-
