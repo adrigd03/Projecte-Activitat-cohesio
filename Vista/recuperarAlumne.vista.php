@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../Estils/estils.css">
     <link rel="stylesheet" href="../Estils/table.css">
     <script defer src="../Vista/alumnes.clase.js"></script>  
-    <title>Passar llista-Durant l'activitat</title>
+    <title>Recuperar Alumne</title>
 </head>
 <body>
 <?php require_once("../Vista/navbar.php");
@@ -21,7 +21,6 @@ for ($i=0; $i < count($alumnes); $i++) {
 $html.="</table>";
 echo($html);
 ?>
-<button class="btn"><a href="../Controlador/recuperarAlumne.php">Afegir Alumne</a></button>
 <input type="button" id="enviar" value="Enviar">
 </body>
 </html>
