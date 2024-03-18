@@ -25,59 +25,65 @@
 </head>
 
 <body>
-
-
     <?php require_once("../Vista/navbar.php"); ?>
     <!--Opcions -->
     <div class="contenidor d-flex flex-column align-items-center">
         <h1>Proves</h1>
-        <div class="btn-group d-flex justify-content-center">
-            <!--AFEGIR PROVAA -->
-            <button type="submit" class="btn btn-primary" id="afegir_prova">Afegir Prova</button>
-            <div id="formulari_prova" hidden>
-                <h2>Afegir Prova</h2>
-                <form action="../Controlador/proves.php" method="post">
+        <!-- Afegir Prova -->   
+        <button class="btn btn-primary afegir-prova">Afegir Prova</button>
+        <br>
+    </div>
+        <div id="modalAfegirProva" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Afegir Dades de la Prova</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+            <form id="formAfegirProva" action="../Controlador/proves.php" method="post">
                     <label for="nom">Nom:</label>
-                    <input type="text" name="nom" id="nom">
+                    <input type="text" name="nom" id="nom" required>
                     <?php
-                    if (!empty($errors["nom"])) {
-                        echo $errors["nom"];
-                    }
-                    ?>
+                    if (!empty($errors["nom"])) { ?>
+              <span class="error"> <?php  echo $errors["nom"]; ?>  </span>
+                <?php  }  ?>
+                    
                     <br>
                     <label for="descripcio">Descripció:</label>
                     <br>
                     <textarea name="descripcio" id="descripcio" rows="4" cols="50"></textarea>
-                    <?php
-                    if (!empty($errors["descricio"])) {
-                        echo $errors["descripcio"];
-                    }
-                    ?>
                     <br>
+                    <?php
+                    if (!empty($errors["descripcio"])) { ?>
+              <span class="error"> <?php  echo $errors["descripcio"]; ?>  </span>
+                <?php  }  ?>
+                    <br>
+
                     <label for="lloc">Lloc:</label>
                     <input type="text" name="lloc" id="lloc">
                     <?php
-                    if (!empty($errors["lloc"])) {
-                        echo $errors["lloc"];
-                    }
-                    ?>
+                    if (!empty($errors["lloc"])) { ?>
+              <span class="error"> <?php  echo $errors["lloc"]; ?>  </span>
+                <?php  }  ?>
                     <br>
+
                     <label for="professor">Professor:</label>
                     <input type="text" name="professor" id="professor">
                     <?php
-                    if (!empty($errors["professor"])) {
-                        echo $errors["professor"];
-                    }
-                    ?>
+                    if (!empty($errors["professor"])) { ?>
+              <span class="error"> <?php  echo $errors["professor"]; ?>  </span>
+                <?php  }  ?>
                     <br>
+
                     <label for="material">Material:</label>
                     <input type="text" name="material" id="material">
                     <?php
-                    if (!empty($errors["material"])) {
-                        echo $errors["material"];
-                    }
-                    ?>
+                    if (!empty($errors["material"])) { ?>
+              <span class="error"> <?php  echo $errors["material"]; ?>  </span>
+                <?php  }  ?>
                     <br>
+
                     <div hidden>
                     <label for="geoX">GeoX:</label>
                     <input type="number" step="0.0001" name="geoX" id="geoX">
@@ -86,32 +92,36 @@
                     <div id="mapa" class="mapa"></div>
                     </div>
                     <button type="submit" name="crear" class="btn btn-primary">Crear </button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                 </form>
             </div>
             
-          
-
+                </div>
+            </div>
         </div>
+        <div class="d-flex flex-wrap justify-content-center"> 
+    <div class="row row-cols-1 row-cols-md-4 g-10 text-center">
         <!-- MOSTREM PROVES-->
         <?php foreach ($proves as $prova) : ?>
-            <div class="d-flex flex-wrap justify-content-center" data-id=<?php echo $prova['id'] ?>>
+            <div class="col mb-3 mt-3" data-id=<?php echo $prova['id'] ?>>
                 <div class="card" style="width:400px">
                     <div class="card-body">
-                        <h4 class="card-title"> Nom de la prova: <?php echo $prova['nom']; ?></h4>
+                        <h4 class="card-title"> <?php echo $prova['nom']; ?></h4>
                         <p class="card-text">Descripcio: <?php echo $prova['descripcio']; ?></p>
                         <p class="card-text">Lloc: <?php echo $prova['lloc']; ?></p>
                         <p class="card-text">Professor: <?php echo $prova['professor']; ?></p>
                         <p class="card-text">Material: <?php echo $prova['material']; ?></p>
                         <button class="btn btn-danger eliminar"  data-id="<?php echo $prova['id']; ?>">Eliminar Prova</button>
-                        <button class="btn btn-primary editar-prova" data-id="<?php echo $prova['id']; ?>">Editar Prova</button>
+                        <button class="btn btn-secondary editar-prova" data-id="<?php echo $prova['id']; ?>">Editar Prova</button>
                         <!-- <h4 class="card-title"><?php echo ("<a href='../Controlador/afegir.php?id=" . $prova['id'] . "'>" . $proves['nom'] . "</a>"); ?> </h4>  -->
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
-
+          
 
     </div>
+        </div>
     <br>
         
     <div id="modalEditarProva" class="modal fade">

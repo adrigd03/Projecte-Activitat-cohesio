@@ -60,6 +60,8 @@ h4 {
 
 
 
+
+
         
         input[type=text], select {
             width: 100%;
@@ -112,6 +114,11 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
 }
 
 /* imatge MapaSaPalomera.png */

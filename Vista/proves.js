@@ -1,22 +1,3 @@
-const botoAfegirProva = document.getElementById("afegir_prova");
-const formulariProva = document.getElementById("formulari_prova");
-const botoEliminarProva = document.getElementById("eliminar_prova");
-const formulariEliminar = document.getElementById("formulari_eliminarProva");
-
-const botoModificarProva = document.getElementById("modificar_prova");
-const formulariModificar = document.getElementById("formulari_modificarProva");
-
-botoAfegirProva.addEventListener("click", () => {
-  if(formulariProva.hidden === true){
-     formulariProva.hidden = false;
-  } else if (formulariProva.hidden === false){
-    formulariProva.hidden = true
-  }
-});
-
-
-
-
 
 
 // put marker on img mapa on click
@@ -88,5 +69,12 @@ $(document).ready(function() {
   });
 });
 
+
+$(document).ready(function() {
+  $(".afegir-prova").click(function () {
+     
+     $("#modalAfegirProva").modal('show');
+  });
+});
 
 

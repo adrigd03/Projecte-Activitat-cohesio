@@ -37,7 +37,7 @@ if(isset($_POST['crear'])){
             $errors["lloc"] = "Ompliu el lloc";
         }
         if(empty($_POST['professor'])){
-            $errors["professor"] = "Ompliu el nom de  professor";
+            $errors["professor"] = "Ompliu el nom de  professor/a";
         }
         if(empty($_POST['material'])){
             $errors["material"] = "Ompliu el material";
@@ -91,7 +91,7 @@ if(isset($_POST['modificar'])){
             $errors["lloc"] = "Ompliu el lloc";
         }
         if(empty($_POST['professor'])){
-            $errors["professor"] = "Ompliu el nom de  professor";
+            $errors["professor"] = "Ompliu el nom de  professor/a";
         }
         if(empty($_POST['material'])){
             $errors["material"] = "Ompliu el material";
