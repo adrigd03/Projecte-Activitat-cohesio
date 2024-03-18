@@ -111,7 +111,7 @@
         <div class="row row-cols-1 row-cols-md-4 g-10 text-center justify-content-center">
             <!-- MOSTREM PROVES-->
             <?php foreach ($proves as $prova) : ?>
-                <div class="col mb-3 mt-3" data-id=<?php echo $prova['id'] ?>>
+                <div class="col my-3 mx-2" data-id=<?php echo $prova['id'] ?>>
                     <div class="card" style="width:400px">
                         <div class="card-body">
                             <h4 class="card-title"> <?php echo $prova['nom']; ?></h4>
