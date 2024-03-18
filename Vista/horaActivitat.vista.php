@@ -18,7 +18,7 @@
 
 <body>
   <?php require_once("../Vista/navbar.php");
-
+  if(isset($_GET["missatge"]))echo("<script>alert(".$_GET["missatge"].")</script>");
   if ((count($grups) / 2) != count($proves)) {
     echo ("Num grups: " . count($grups) . "<br>");
     echo ("Num proves: " . count($proves) . "<br>");

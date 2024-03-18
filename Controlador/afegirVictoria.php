@@ -16,6 +16,6 @@ if(isset($_GET["grup"])){
     $consulta = $pdo->prepare($sql);
     $consulta->execute(["id"=>$grup,"valor"=>$grups["victories"]+1]);
 
-    exit(header("Location: ../Controlador/horaActivitat.php"));
+    exit(header("Location: ../Controlador/horaActivitat.php?missatge='Guanyador Afegit Correctament'"));
 
 }
