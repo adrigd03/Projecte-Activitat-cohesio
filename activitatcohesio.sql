@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-02-2024 a las 19:03:43
+-- Tiempo de generación: 18-03-2024 a las 15:10:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -41,19 +41,19 @@ CREATE TABLE `alumnes` (
 --
 
 INSERT INTO `alumnes` (`id`, `id_grup`, `nom`, `clase`, `grup`, `asistencia`) VALUES
-(1, 10, 'Eric', 'DAW 2', 'DAW 2', 1),
-(2, 9, 'Adrián', 'DAW 1', 'DAW 1', 1),
-(3, 10, 'Pere', 'DAW 2', 'DAW 2', 1),
-(4, 10, 'Marta', 'DAW 2', 'DAW 2', 1),
+(1, 93, 'Eric', 'DAW 2', 'DAW 2', 1),
+(2, NULL, 'Adrián', 'DAW 1', '', 1),
+(3, 93, 'Pere', 'DAW 2', 'DAW 2', 1),
+(4, 93, 'Marta', 'DAW 2', 'DAW 2', 1),
 (5, NULL, 'Alex', 'DAW 2', '', 0),
-(6, 10, 'Raul', 'DAW 2', 'DAW 2', 1),
+(6, NULL, 'Raul', 'DAW 2', '', 0),
 (7, NULL, 'Dani', 'DAW 2', '', 0),
 (8, NULL, 'Biel', 'DAW 2', '', 0),
-(9, 9, 'Benito', 'DAW 1', 'DAW 1', 1),
-(10, 9, 'Maria', 'DAW 1', 'DAW 1', 1),
-(11, NULL, 'Aina', 'DAW 1', '', 1),
+(9, 92, 'Benito', 'DAW 1', 'DAW 6', 1),
+(10, 92, 'Maria', 'DAW 1', 'DAW 6', 1),
+(11, NULL, 'Aina', 'DAW 1', '', 0),
 (12, NULL, 'Sergi', 'DAW 1', '', 0),
-(13, NULL, 'Dani', 'DAW 1', '', 0);
+(13, 92, 'Dani', 'DAW 1', 'DAW 6', 1);
 
 -- --------------------------------------------------------
 
@@ -72,14 +72,12 @@ CREATE TABLE `grups` (
 --
 
 INSERT INTO `grups` (`id`, `nom`, `victories`) VALUES
-(9, 'DAW 1', 1),
-(10, 'DAW 2', 1),
-(11, 'Nou Grup 13423', 0),
-(13, 'Nou Grup 3', 0),
-(14, 'Nou Grup 4', 1),
-(15, 'Nou Grup 5', 0),
-(16, 'Nou Grup 6', 0),
-(17, 'Nou Grup 43', 0);
+(92, 'DAW 6', 0),
+(93, 'DAW 2', 0),
+(95, 'Nou Grup', 0),
+(97, 'Nou Grup', 0),
+(99, 'Nou Grup', 0),
+(100, 'Nou Grup', 0);
 
 -- --------------------------------------------------------
 
@@ -93,18 +91,19 @@ CREATE TABLE `proves` (
   `descripcio` text NOT NULL,
   `lloc` varchar(50) NOT NULL,
   `professor` varchar(80) NOT NULL,
-  `material` varchar(80) NOT NULL
+  `material` varchar(80) NOT NULL,
+  `lat` double NOT NULL,
+  `lng` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `proves`
 --
 
-INSERT INTO `proves` (`id`, `nom`, `descripcio`, `lloc`, `professor`, `material`) VALUES
-(1, 'futbol', 'afasf', 'asddasd', 'sadasd', 'asdasd'),
-(2, 'Pañuelo', 'asdasdas', 'Pati', 'Xavi', 'Pañuelo'),
-(3, 'Ping Pong', 'sdasda', 'Ping Pong', 'David', ''),
-(4, '', '', '', '', '');
+INSERT INTO `proves` (`id`, `nom`, `descripcio`, `lloc`, `professor`, `material`, `lat`, `lng`) VALUES
+(6, 'Mocador', 'asdasdsa', 'dsadsa', 'dasdas', 'dsadas', 41.67828430583841, 2.7804561010212345),
+(16, 'asdsad', 'asdsadsa', 'dasdsa', 'dasd', 'asdsad', 41.67828430583841, 2.7804561010212345),
+(17, 'Pere Pi', 'asssssssssssssssssssss', 'ssssssssssssssssssss', 'ssssssssssssssssss', 'ssssssssssssssss', 41.67798781441961, 2.7801650813431023);
 
 --
 -- Índices para tablas volcadas
@@ -142,13 +141,13 @@ ALTER TABLE `alumnes`
 -- AUTO_INCREMENT de la tabla `grups`
 --
 ALTER TABLE `grups`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT de la tabla `proves`
 --
 ALTER TABLE `proves`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

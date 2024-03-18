@@ -107,7 +107,7 @@
             </div>
         </div>
     </div>
-    <div class="d-flex flex-wrap justify-content-center">
+    <div class="container-fluid justify-content-center">
         <div class="row row-cols-1 row-cols-md-4 g-10 text-center">
             <!-- MOSTREM PROVES-->
             <?php foreach ($proves as $prova) : ?>
