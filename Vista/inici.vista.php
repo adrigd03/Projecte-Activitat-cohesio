@@ -39,9 +39,10 @@
                     <p class="card-text">
                         <hr>
                         <button class="btn "><a href="../Controlador/clasesActivitat.php">Passar Llista</a></button><br>
+                        <button class="btn"><a href="../Controlador/clasesRecuperar.php">Afegir Alumne en la Llista</a></button><br>
+                        <button class="btn "><a href="../Controlador/clasesNoVingut.php">Llistat Alumnat Que No Han Vingut</a></button><br>
                         <button class="btn "><a href="../Controlador/horaActivitat.php">Puntuar Activitats</a></button><br>
                         <button class="btn "><a href="../Controlador/classificacio.php">Classificació General</a></button><br>
-                        <button class="btn "><a href="../Controlador/clasesNoVingut.php">Llistat Alumnat Que No Han Vingut</a></button><br>
                         <button class="btn "><a href="../Controlador/edicioGrups.php">Edició De Grups</a></button>
                     </p>
                 </div>

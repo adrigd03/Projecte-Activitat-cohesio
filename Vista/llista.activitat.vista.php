@@ -21,7 +21,6 @@ for ($i=0; $i < count($alumnes); $i++) {
 $html.="</table>";
 echo($html);
 ?>
-<button class="btn"><a href="../Controlador/recuperarAlumne.php">Afegir Alumne</a></button>
 <input type="button" id="enviar" value="Enviar">
 </body>
 </html>
