@@ -24,7 +24,7 @@
         <div class="card-body">
           <h5 class="card-title text-center"><?php echo ($grup['nom']); ?></h5>
           <?php echo ("<a class='btn btn-dark'  href='../Controlador/afegir.php?id=" . $grup['id'] . "'>" . "Modificar Alumnes" . "</a>"); ?>
-          <button class="btn btn-dark eliminar">Eliminar</button>
+          <button class="btn btn-dark eliminar" onclick="return confirm('Estàs segur? S\'eliminara el grup.')" >Eliminar</button>
           <button class="btn btn-dark canviar">Canviar Nom</button>
           <button class="btn btn-dark guardar" hidden>Guardar </button>
         </div>

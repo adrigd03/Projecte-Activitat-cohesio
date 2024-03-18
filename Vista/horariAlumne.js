@@ -32,7 +32,12 @@ async function crearMapa(divMap, goMaps) {
             mapId: "DEMO_MAP_ID",                            // Ampliació
         });
 
-    marcarSaPa(goMaps);
+    for (let index = 0; index < document.getElementById("ub").children.length; index++) {
+            const element = document.getElementById("ub").children[index];
+            
+            gMark=crearMarcador(parseFloat(element.children[1].firstChild.wholeText),parseFloat(element.children[2].firstChild.wholeText),element.children[0].firstChild.wholeText);
+            gMark.setMap(goMaps);
+        }
 
    
 }

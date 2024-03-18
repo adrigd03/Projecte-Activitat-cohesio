@@ -24,9 +24,11 @@ $descripcio = isset($_POST['descripcio']) ? $_POST['descripcio'] : '';
 $lloc = isset($_POST['lloc']) ? $_POST['lloc'] : '';
 $professor = isset($_POST['professor']) ? $_POST['professor'] : '';
 $material = isset($_POST['material']) ? $_POST['material'] : '';
+$geoX = isset($_POST['geoX']) ? $_POST['geoX'] : '';
+$geoY = isset($_POST['geoY']) ? $_POST['geoY'] : '';
 
 if(isset($_POST['crear'])){
-    if(empty($nom) || empty($descripcio) || empty($lloc) || empty($professor) || empty($material)) {
+    if(empty($nom) || empty($descripcio) || empty($lloc) || empty($professor) || empty($material) || empty($geoX) || empty($geoY)) {
         if(empty($_POST['nom'])){
             $errors["nom"] = "Ompliu el nom";
         }
@@ -41,6 +43,12 @@ if(isset($_POST['crear'])){
         }
         if(empty($_POST['material'])){
             $errors["material"] = "Ompliu el material";
+        }
+        if(empty($_POST['geoX'])){
+            $errors["geoX"] = "Ompliu les coordenades";
+        }
+        if(empty($_POST['geoY'])){
+            $errors["geoY"] = "Ompliu les coordenades";
         }
     } 
     else {
@@ -59,7 +67,7 @@ if(isset($_POST['crear'])){
             
         } else{
     // Crear la consulta SQL per a inserir la nova prova
-    $stmt = $pdo->prepare("INSERT INTO proves (nom, descripcio, lloc, professor, material) VALUES ('$nom', '$descripcio','$lloc','$professor','$material')");
+    $stmt = $pdo->prepare("INSERT INTO proves (nom, descripcio, lloc, professor, material, lat, lng) VALUES ('$nom', '$descripcio','$lloc','$professor','$material','$geoX','$geoY')");
     $stmt->execute();
     header("Location: ./proves.php");
         }
@@ -107,11 +115,13 @@ if(isset($_POST['modificar'])){
             
         } else{
     // Crear la consulta SQL per a inserir la nova prova
-            $stmt = $pdo->prepare("UPDATE proves SET descripcio = :descripcio, lloc = :lloc, professor = :professor, material = :material WHERE id = :id");
+            $stmt = $pdo->prepare("UPDATE proves SET descripcio = :descripcio, lloc = :lloc, professor = :professor, material = :material, lat = :geoX, lng = :geoY WHERE id = :id");
             $stmt->bindParam(':descripcio', $descripcio);
             $stmt->bindParam(':lloc', $lloc);
             $stmt->bindParam(':professor', $professor);
             $stmt->bindParam(':material', $material);
+            $stmt->bindParam(':geoX', $geoX);
+            $stmt->bindParam(':geoY', $geoY);
             $stmt->bindParam(':id', $_POST['idProva']);
             $stmt->execute();
             header("Location: ./proves.php");

@@ -1,4 +1,5 @@
 let gMaps;    // Mapa Google Maps
+let gMaps2;    // Mapa Google Maps
 let gMark;    // Marcador Institut
 let latLng = { lat: 41.67828430583841, lng: 2.7804561010212345 };
 let infoWindow;
@@ -22,7 +23,7 @@ function marcarSaPa(goMaps) {
 }
 //https://rapidapi.com/jgentes/api/crime-data
 // Crear mapa Google Maps
-async function crearMapa(divMap, goMaps) {
+async function crearMapa(divMap, goMaps,geoX,geoY) {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
     goMaps = new google.maps.Map(
@@ -46,8 +47,8 @@ async function crearMapa(divMap, goMaps) {
     // Configure the click listener.
     goMaps.addListener("click", (mapsMouseEvent) => {
         console.log(mapsMouseEvent.latLng.toJSON())
-        document.getElementById("geoX").value=mapsMouseEvent.latLng.toJSON()["lat"];
-        document.getElementById("geoY").value=mapsMouseEvent.latLng.toJSON()["lng"];
+        document.getElementById(geoX).value=mapsMouseEvent.latLng.toJSON()["lat"];
+        document.getElementById(geoY).value=mapsMouseEvent.latLng.toJSON()["lng"];
         // Close the current InfoWindow.
         infoWindow.close();
 
@@ -65,7 +66,7 @@ async function crearMapa(divMap, goMaps) {
     
         // Create a new InfoWindow.
         infoWindow = new google.maps.InfoWindow({
-            position: {lat:parseFloat(document.getElementById("geoX").value),lng:parseFloat(document.getElementById("geoY").value)},
+            position: {lat:parseFloat(document.getElementById(geoX).value),lng:parseFloat(document.getElementById(geoY).value)},
         });
         infoWindow.setContent(
             document.getElementById("nom").value
@@ -74,8 +75,8 @@ async function crearMapa(divMap, goMaps) {
     
     }
     
-    document.getElementById("geoX").addEventListener("click", canviarPunt);
-    document.getElementById("geoY").addEventListener("click", canviarPunt);
+    document.getElementById(geoX).addEventListener("click", canviarPunt);
+    document.getElementById(geoY).addEventListener("click", canviarPunt);
 }
 
 
@@ -83,5 +84,9 @@ async function crearMapa(divMap, goMaps) {
 window.crearMapa = function () {
     document.getElementById("geoX").setAttribute("value", latLng["lat"]);
     document.getElementById("geoY").setAttribute("value", latLng["lng"]);
-    gMaps=crearMapa(document.getElementById('mapa'), gMaps);
+    gMaps=crearMapa(document.getElementById('mapa'), gMaps,"geoX","geoY");
+
+    document.getElementById("geoX2").setAttribute("value", latLng["lat"]);
+    document.getElementById("geoY2").setAttribute("value", latLng["lng"]);
+    gMaps2=crearMapa(document.getElementById('mapa2'), gMaps2,"geoX2","geoY2");
 };    // Necessari si s'utilitzen mòduls

@@ -58,9 +58,20 @@
     $html .= "</table>";
     echo ($html);
   }
-
   ?>
-  <div hidden id="mapa" class="mapa"></div>
+
+<table hidden>
+  <tbody id=ub>
+    <?php foreach($proves as $key=>$value): ?>
+    <tr>
+      <td><?= $value["nom"]; ?></td>
+        <td><?= $value["lat"]; ?></td>
+        <td><?= $value["lng"]; ?></td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+  <div id="mapa" class="mapa"></div>
 </body>
 
 </html>
