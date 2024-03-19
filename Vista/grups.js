@@ -1,7 +1,9 @@
 function eliminarGrup(event){
+    if (confirm("Estàs segur? S\'eliminara el grup.") == true) {
     let id=event.target.parentElement.parentElement.getAttribute("id");
 
     window.location.href = "../Controlador/eliminarGrup.php?id="+id;
+    }
 }
 function canviarNom(event){
     event.target.parentElement.children[3].setAttribute("hidden","");
