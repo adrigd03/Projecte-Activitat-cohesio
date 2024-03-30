@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php require_once("../Vista/navbar.php");
-echo("<h4>".$clase."</h4>");
+echo("<h4>".$grup."</h4>");
 //Crea una tabla en la que sale el nombre y si va a assistir a la actividad en la cual cada fila tiene como id el id del alumno.
 $html="<table id='tabla'><tr><th>Nom</th><th>Assistencia</th></tr>";
 for ($i=0; $i < count($alumnes); $i++) {

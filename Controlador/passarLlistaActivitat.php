@@ -17,7 +17,7 @@ for ($i=0; $i < count($alumnes) ; $i+=2) {
     }
 }
 
-header("Location: ../Controlador/clasesActivitat.php");
+header("Location: ../Controlador/grupsActivitat.php");
 exit();
 
 ?>

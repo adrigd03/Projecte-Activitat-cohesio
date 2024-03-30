@@ -6,13 +6,13 @@ if(!isset($_SESSION["correu"])){
 }
 
 
-//Obtiene todas las clases.
+//Obte els grups que tenen alumnes
 require_once("../Controlador/db.php");
 $pdo = connectar();
-$sql = "SELECT clase FROM `alumnes` GROUP BY clase";
+$sql = "SELECT grup FROM `alumnes` GROUP BY grup";
 $consulta = $pdo->prepare($sql);
 $consulta->execute([]);
-$clases = $consulta->fetchAll(PDO::FETCH_ASSOC);
+$grup = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-require_once("../Vista/clases.activitat.vista.php");
+require_once("../Vista/grupRecuperar.vista.php");
 ?>

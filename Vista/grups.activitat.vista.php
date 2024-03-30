@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estils/estils.css">
-    <title>Clases Activitat</title>
+    <title>Grups Activitat</title>
 </head>
 <body>
 <?php require_once("../Vista/navbar.php");
@@ -13,10 +13,10 @@
 
 
 <div class="contenidor">
-		<h1>Classes</h1>
+		<h1>Grups</h1>
     <?php
-    for ($i=0; $i < count($clases) ; $i++) {
-        echo("<div class='grup'> <div class='card-body'> <h4 class='card-title'> <a href='../Controlador/llistaActivitat.php?clase=".$clases[$i]["clase"]."'>".($clases[$i]["clase"])."</a></h4></div></div>"); 
+    for ($i=0; $i < count($grups) ; $i++) {
+        echo("<div class='grup'> <div class='card-body'> <h4 class='card-title'> <a href='../Controlador/llistaActivitat.php?clase=".$grups[$i]["grup"]."'>".($grups[$i]["grup"])."</a></h4></div></div>"); 
         
     }
     ?>
