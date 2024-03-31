@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php require_once("../Vista/navbar.php");
-//Muestra todas clases en forma de enlace que manda a una pagina que muestra los alumnos de esa clase.
+//Mostra tots els grups
 ?>
 
 
@@ -16,7 +16,7 @@
 		<h1>Grups</h1>
     <?php
     for ($i=0; $i < count($grups) ; $i++) {
-        echo("<div class='grup'> <div class='card-body'> <h4 class='card-title'> <a href='../Controlador/llistaActivitat.php?clase=".$grups[$i]["grup"]."'>".($grups[$i]["grup"])."</a></h4></div></div>"); 
+        echo("<div class='grup'> <div class='card-body'> <h4 class='card-title'> <a href='../Controlador/llistaActivitat.php?grup=".$grups[$i]["nom"]."'>".($grups[$i]["nom"])."</a></h4></div></div>"); 
         
     }
     ?>
