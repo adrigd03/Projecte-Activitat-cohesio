@@ -28,31 +28,57 @@ if (!$grup) {
     exit();
 }
 
+
 // Comprovem si l'usuari ha enviat el formulari
 if (isset($_POST["afegir"])) {
-    // Obtenim els alumnes seleccionats
-    $alumnes = $_POST["alumneID"];
-    // Obtenim el grup
-    $id = $_GET["id"];
-    // Actualitzem els alumnes
-    $sql = "UPDATE alumnes SET id_grup = :id , grup = :grup WHERE id IN (" . implode(",", $alumnes) . ")";
-    $consulta = $pdo->prepare($sql);
-    $consulta->execute(["id" => $id, "grup" => $grup["nom"]]);
+    try{
 
-    $success = "Alumnes afegits correctament";
+        // Comprovem si hi ha alumnes seleccionats
+        if (isset($_POST["alumneID"]) == false){
+            throw new Exception();
+        }
+        // Obtenim els alumnes seleccionats
+        $alumnes = $_POST["alumneID"];
+        // Obtenim el grup
+        $id = $_GET["id"];
+        // Actualitzem els alumnes
+        $sql = "UPDATE alumnes SET id_grup = :id , grup = :grup WHERE id IN (" . implode(",", $alumnes) . ")";
+        $consulta = $pdo->prepare($sql);
+        $consulta->execute(["id" => $id, "grup" => $grup["nom"]]);
+        
+        $success = "Alumnes afegits correctament";
+    }
+    catch(PDOException $e){
+        $errors = "Error al afegir alumnes";
+    }catch(Exception $e){
+        $errors = "Error al afegir alumnes o no s'hi ha seleccionat cap alumne";
+    }
+
 }
 
 if(isset($_POST["eliminar"])){
-    // Obtenim els alumnes seleccionats
-    $alumnes = $_POST["alumneID"];
-    // Obtenim el grup
-    $id = $_GET["id"];
-    // Actualitzem els alumnes
-    $sql = "UPDATE alumnes SET id_grup = NULL , grup = NULL WHERE id IN (" . implode(",", $alumnes) . ")";
-    $consulta = $pdo->prepare($sql);
-    $consulta->execute();
+    try{
+        
+        // Comprovem si hi ha alumnes seleccionats
+        if (isset($_POST["alumneID"]) == false){
+            throw new Exception();
+        }
+        // Obtenim els alumnes seleccionats
+        $alumnes = $_POST["alumneID"];
+        // Obtenim el grup
+        $id = $_GET["id"];
+        // Actualitzem els alumnes
+        $sql = "UPDATE alumnes SET id_grup = NULL , grup = NULL WHERE id IN (" . implode(",", $alumnes) . ")";
+        $consulta = $pdo->prepare($sql);
+        $consulta->execute();
+        
+        $success = "Alumnes eliminats correctament";
+    }catch(PDOException $e){
+        $errors = "Error al eliminar alumnes";
+    }catch(Exception $e){
+        $errors = "Error al eliminar alumnes o no s'hi ha seleccionat cap alumne";
+    }
 
-    $success = "Alumnes eliminats correctament";
 }
 
 
