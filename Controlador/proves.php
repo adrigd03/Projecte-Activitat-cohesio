@@ -110,10 +110,10 @@ if(isset($_POST['modificar'])){
         $statement = $pdo->prepare("SELECT * FROM proves WHERE professor = '$professor'");
         $statement->execute();
         $comprov = $statement->fetch(PDO::FETCH_ASSOC); 
-         if($comprov){
+      /*   if($comprov){
              echo '<div class="alert alert-danger" role="alert">Professor/@ ja esta assignat/da</div>';
             
-        } else{
+        } else{*/
     // Crear la consulta SQL per a inserir la nova prova
             $stmt = $pdo->prepare("UPDATE proves SET descripcio = :descripcio, lloc = :lloc, professor = :professor, material = :material, lat = :geoX, lng = :geoY WHERE id = :id");
             $stmt->bindParam(':descripcio', $descripcio);
@@ -127,7 +127,7 @@ if(isset($_POST['modificar'])){
             header("Location: ./proves.php");
         }
     }
-}
+//}
 
 
 
