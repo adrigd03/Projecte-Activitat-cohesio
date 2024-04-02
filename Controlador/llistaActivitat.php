@@ -14,7 +14,7 @@ $grup = $_GET["grup"];
 //Agafa a tots els alumnes que estan asignats en aquell grup
 require_once("../Controlador/db.php");
 $pdo = connectar();
-$sql = "SELECT * FROM alumnes WHERE grup = :grup AND asistencia=1";
+$sql = "SELECT * FROM alumnes WHERE grup = :grup";
 /*$sql = "SELECT a.*
         FROM alumnes a
         INNER JOIN grups g ON a.id_grup = g.id

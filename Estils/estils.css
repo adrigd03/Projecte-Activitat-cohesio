@@ -52,6 +52,13 @@ h4 {
   font-weight: black;
 }
 
+h5 {
+  margin: 20px 0;
+  text-align: center;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #414242;
+  font-weight: black;
+}
 /* Navbar */
 .navbara {
   background-color: #616161;

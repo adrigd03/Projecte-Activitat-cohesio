@@ -10,7 +10,7 @@ if(!isset($_SESSION["correu"])){
 
 $grup = $_GET["grup"]; 
 
-//Pilla a todos los alumnos de que esten en esa clase.
+
 require_once("../Controlador/db.php");
 $pdo = connectar();
 $sql = "SELECT * FROM alumnes WHERE grup = :grup AND asistencia=0";
