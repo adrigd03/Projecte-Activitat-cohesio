@@ -17,7 +17,7 @@ $html="<table id='tabla'><tr><th>Nom</th><th>Assistencia</th></tr>";
 for ($i=0; $i < count($alumnes); $i++) {
 
     if($alumnes[$i]["asistencia"]==1){$html.= "<tr id='".$alumnes[$i]["id"]."'><td>".$alumnes[$i]["nom"]."</td><td>".'<input type="checkbox" checked="checked">'."</td></tr>";}
-   // else{$html.= "<tr id='".$alumnes[$i]["id"]."'><td>".$alumnes[$i]["nom"]."</td><td>".'<input type="checkbox">'."</td></tr>";}
+ 
 }
 $html.="</table>";
 echo($html);
@@ -32,7 +32,7 @@ $html="<h5>Afegir Alumne</h5>";
 $html.="<table id='tabla'><tr><th>Nom</th><th>Assistencia</th></tr>";
 
 
-   // if($alumnes[$i]["asistencia"]==1){$html.= "<tr id='".$alumnes[$i]["id"]."'><td>".$alumnes[$i]["nom"]."</td><td>".'<input type="checkbox" checked="checked">'."</td></tr>";}
+   
    {$html.= "<tr id='".$alumnes[$i]["id"]."'><td>".$alumnes[$i]["nom"]."</td><td>".'<input type="checkbox">'."</td></tr>";}
 
 $html.="</table>";
@@ -47,7 +47,15 @@ echo($html);
 ?>
 
 <br>
-<input type="button" id="enviar" value="Enviar">
+<div class="flex-container-enviar">
+  <input type="button" id="enviar" value="Enviar" class="btn btn-secondary">
+</div>
+<br>
+<div class="flex-container-enrere">
+  <a href="../Controlador/grupsActivitat.php"><input type="button" class="btn btn-secondary" value="Tornar Enrere"></a>
+</div>
+
+
 <br>
 </body>
 </html>
