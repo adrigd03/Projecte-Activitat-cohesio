@@ -28,7 +28,7 @@
                         <button class="btn "><a href="../Controlador/grups.php">Crear/Moure Grups</a></button><br>
                     <?php endif; ?>
                     <button class="btn "><a href="../Controlador/proves.php">Crear/Modificar Proves</a></button><br>
-                    <button class="btn "><a href="../Controlador/clases.php">Passar Llista</a></button>
+                    <button class="btn "><a href="../Controlador/clases.php">Passar Llista De Classes</a></button>
                 </p>
             </div>
         </div>
