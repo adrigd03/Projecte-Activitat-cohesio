@@ -36,7 +36,7 @@ catch(Exception $e){
 function iniciarSession($correu){
 //Poner una exclamacion para que sea solo profes.
     $array= explode("@",$correu);
-    if($array[1]=="sapalomera.cat"&&str_contains($array[0],".")){
+    if($array[1]=="sapalomera.cat"&&!str_contains($array[0],".")){
         //Profesor
         $role="Profe";
     }//sapalomeracohesio@gmail.com

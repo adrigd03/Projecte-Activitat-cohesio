@@ -22,7 +22,7 @@
   if ((count($grups) / 2) != count($proves)) {
     echo ("Num grups: " . count($grups) . "<br>");
     echo ("Num proves: " . count($proves) . "<br>");
-    echo ("No se puede crear un horario <br> Para crearlo tiene que haber la mitad de pruebas que de grupos.");
+    echo ("No es pot crear horari <br> Tenen que haver-hi la meitat de provas que de grups.");
   } else {
     $html = "<table hidden id='tabla'><tr><th></th>";
     for ($i = 0; $i < count($proves); $i++) {

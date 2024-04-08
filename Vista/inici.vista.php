@@ -28,7 +28,7 @@
                         <button class="btn "><a href="../Controlador/grups.php">Crear/Moure Grups</a></button><br>
                     <?php endif; ?>
                     <button class="btn "><a href="../Controlador/proves.php">Crear/Modificar Proves</a></button><br>
-                    <button class="btn "><a href="../Controlador/clases.php">Passar Llista De Classes</a></button>
+                    <button class="btn "><a href="../Controlador/clases.php">Passar Llista Per Classes</a></button>
                 </p>
             </div>
         </div>
@@ -38,7 +38,7 @@
                     <h2 class="card-title">Durant l'Activitat</h2>
                     <p class="card-text">
                         <hr>
-                        <button class="btn "><a href="../Controlador/grupsActivitat.php">Passar Llista</a></button><br>
+                        <button class="btn "><a href="../Controlador/grupsActivitat.php">Passar Llista Per Grups</a></button><br>
                       <!--  <button class="btn"><a href="../Controlador/grupRecuperar.php">Afegir Alumne en la Llista</a></button><br> -->
                         <button class="btn "><a href="../Controlador/clasesNoVingut.php">Llistat Alumnat Que No Han Vingut</a></button><br>
                         <button class="btn "><a href="../Controlador/horaActivitat.php">Puntuar Activitats</a></button><br>
